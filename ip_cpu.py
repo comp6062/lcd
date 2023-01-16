@@ -17,10 +17,10 @@ def CPU():     # get CPU temperature from file "/sys/class/thermal/thermal_zone0
     tmp = open('/sys/class/thermal/thermal_zone0/temp')
     cpu = tmp.read()
     tmp.close()
-    return '  CPU: {:.2f}'.format( float(cpu)/1000 ) + ' C'
+    return '  CPU - {:.2f}'.format( float(cpu)/1000 ) + 'C'
 
 
-IP =' IP: ' + check_output (["hostname", "-I"]).split()[0]
+IP ='IP:' + check_output (["hostname", "-I"]).split()[0]
 try:
 
     print("Writing to display")
